@@ -15,8 +15,8 @@ jobs:
       with:
         node-version: '*'
     - name: Run README.md update script
-      run: node scripts/yearTracker.js > README.md
-    - name: Commit change & Push
+      run: node src/index.mjs > README.md
+    - name: Commit new readme file
       run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'

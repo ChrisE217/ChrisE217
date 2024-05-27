@@ -6,17 +6,7 @@ const progressOfThisYear = (Date.now() - startOfYear) / (endOfYear - startOfYear
 
 const progressBarOfThisYear = () => {
     const passedProgressBarIndex = parseInt(progressOfThisYear * 30);
-    return `{ ${'█'.repeat(passedProgressBarIndex)}${'▁'.repeat(30 - passedProgressBarIndex)} }`;
+    return `[ ${'█'.repeat(passedProgressBarIndex)}${'▁'.repeat(30 - passedProgressBarIndex)} ]`;
 };
 
-const readme = `\
-### Hi there 👋
-
-⏳ Year progress ${progressBarOfThisYear()} ${(progressOfThisYear * 100).toFixed(2)} %
-
----
-
-⏰ Last updated on ${new Date().toUTCString()}\
-`
-
-console.log(readme)
+export default `\⏳ Year progress ${progressBarOfThisYear()} ${(progressOfThisYear * 100).toFixed(2)} %`
