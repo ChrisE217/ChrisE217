@@ -1,12 +1,15 @@
 import YearTracker from './yearTracker.mjs';
+import Views from './views.mjs';
+import Spotify from './spotify.mjs';
 
 const readme = `\
 ### Hi there 👋
 
 ${YearTracker}
 
+${Spotify}
 ---
-![](https://komarev.com/ghpvc/?username=ChrisE217&color=656d6f&abbreviated=true&label=Views&style=for-the-badge)
+${Views}
 `
 
 console.log(readme)
