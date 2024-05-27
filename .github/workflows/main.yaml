@@ -1,4 +1,4 @@
-name: Progress Bar CI
+name: Year Tracker
 
 on:
   workflow_dispatch:
