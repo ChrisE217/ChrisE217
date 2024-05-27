@@ -1,4 +1,4 @@
-name: Year Tracker
+name: Readme Updater
 
 on:
   workflow_dispatch:
