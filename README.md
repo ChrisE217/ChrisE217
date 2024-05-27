@@ -1,7 +1,7 @@
 ### Hi there 👋
 
-⏳ Year progress { ████████████▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁ } 40.30 %
+⏳ Year progress [ ████████████▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁ ] 40.30 %
 
 ---
+![](https://komarev.com/ghpvc/?username=ChrisE217&color=656d6f&abbreviated=true&label=Views&style=for-the-badge)
 
-⏰ Last updated on Mon, 27 May 2024 12:02:42 GMT
