@@ -1,6 +1,6 @@
-import YearTracker from './yearTracker.mjs';
-import Views from './views.mjs';
-import Spotify from './spotify.mjs';
+import YearTracker from "./yearTracker.mjs";
+import Views from "./views.mjs";
+import Spotify from "./spotify.mjs";
 
 const readme = `\
 ### Hi there 👋
@@ -12,6 +12,6 @@ ${Spotify}
 
 ---
 ${Views}
-`
+`;
 
-console.log(readme)
+console.log(readme);

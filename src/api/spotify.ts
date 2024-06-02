@@ -4,11 +4,11 @@ import { decode } from "querystring";
 import { Player } from "../components/NowPlaying";
 import fetch from "isomorphic-unfetch";
 import { stringify } from "querystring";
-import { URLSearchParams } from 'url';
+import { URLSearchParams } from "url";
 
 export default async function (req: NowRequest, res: NowResponse) {
   const {
-    item = ({} as any),
+    item = {} as any,
     is_playing: isPlaying = false,
     progress_ms: progress = 0,
   } = await nowPlaying();
@@ -74,7 +74,9 @@ async function getAuthorizationToken() {
 }
 
 const NOW_PLAYING_ENDPOINT = `/me/player/currently-playing`;
-export async function nowPlaying(): Promise<Partial<SpotifyApi.CurrentlyPlayingResponse>> {
+export async function nowPlaying(): Promise<
+  Partial<SpotifyApi.CurrentlyPlayingResponse>
+> {
   const Authorization = await getAuthorizationToken();
   const response = await fetch(`${BASE_URL}${NOW_PLAYING_ENDPOINT}`, {
     headers: {
@@ -91,22 +93,28 @@ export async function nowPlaying(): Promise<Partial<SpotifyApi.CurrentlyPlayingR
 }
 
 const TOP_TRACKS_ENDPOINT = `/me/top/tracks`;
-export async function topTrack({ index, timeRange = 'short_term' }: { index: number, timeRange?: 'long_term'|'medium_term'|'short_term' }): Promise<SpotifyApi.TrackObjectFull> {
+export async function topTrack({
+  index,
+  timeRange = "short_term",
+}: {
+  index: number;
+  timeRange?: "long_term" | "medium_term" | "short_term";
+}): Promise<SpotifyApi.TrackObjectFull> {
   const Authorization = await getAuthorizationToken();
   const params = new URLSearchParams();
-  params.set('limit', '1');
-  params.set('offset', `${index}`);
-  params.set('time_range', `${timeRange}`);
+  params.set("limit", "1");
+  params.set("offset", `${index}`);
+  params.set("time_range", `${timeRange}`);
   const response = await fetch(`${BASE_URL}${TOP_TRACKS_ENDPOINT}?${params}`, {
     headers: {
-      Authorization
+      Authorization,
     },
   });
   const { status } = response;
   if (status === 204) {
     return null;
   } else if (status === 200) {
-    const data = await response.json() as SpotifyApi.UsersTopTracksResponse;
+    const data = (await response.json()) as SpotifyApi.UsersTopTracksResponse;
     return data.items[0];
   }
 }

@@ -3,18 +3,13 @@ import ReadmeImg from "./ReadmeImg";
 import Text from "./Text";
 
 export interface Props {
-  index?: number,
+  index?: number;
   cover?: string;
   track: string;
   artist: string;
 }
 
-export const Track: React.FC<Props> = ({
-  index,
-  cover,
-  track,
-  artist,
-}) => {
+export const Track: React.FC<Props> = ({ index, cover, track, artist }) => {
   return (
     <ReadmeImg width="540" height="64">
       <style>
@@ -54,7 +49,13 @@ export const Track: React.FC<Props> = ({
           paddingLeft: 4,
         }}
       >
-        <Text style={{ width: '16px', marginRight: '16px' }} size="large" weight="bold">{index}</Text>
+        <Text
+          style={{ width: "16px", marginRight: "16px" }}
+          size="large"
+          weight="bold"
+        >
+          {index}
+        </Text>
         <img id="cover" src={cover ?? null} width="48" height="48" />
         <div
           style={{
