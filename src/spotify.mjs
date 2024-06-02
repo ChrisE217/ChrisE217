@@ -1,5 +1,5 @@
-export default `\
-| 🎵 Now Playing                                                                                                                    |
-| ------------------------------------------------------------------------------------------------------------------------------ |
-| <a href="https://status.nmoo.dev/now-playing?open"><img src="https://status.nmoo.dev/now-playing" width="540" height="64"></a> |
+export default `
+<a href="https://chrisewart.com/spotify?open">
+    <img src="https://chrisewart.com/spotify" width="540" height="64">
+</a> 
 `

@@ -1,16 +1,19 @@
-import fetch from "isomorphic-unfetch";
-import { stringify, decode } from "querystring";
+import { NowRequest, NowResponse } from "@vercel/node";
 import { renderToString } from "react-dom/server";
+import { decode } from "querystring";
 import { Player } from "../components/NowPlaying";
+import fetch from "isomorphic-unfetch";
+import { stringify } from "querystring";
+import { URLSearchParams } from 'url';
 
-export default async function (req, res) {
+export default async function (req: NowRequest, res: NowResponse) {
   const {
-    item = ({}),
+    item = ({} as any),
     is_playing: isPlaying = false,
     progress_ms: progress = 0,
   } = await nowPlaying();
 
-  const params = decode(req.url.split("?")[1]);
+  const params = decode(req.url.split("?")[1]) as any;
 
   if (params && typeof params.open !== "undefined") {
     if (item && item.external_urls) {
@@ -42,7 +45,6 @@ export default async function (req, res) {
   return res.status(200).send(text);
 }
 
-
 const {
   SPOTIFY_CLIENT_ID: client_id,
   SPOTIFY_CLIENT_SECRET: client_secret,
@@ -72,7 +74,7 @@ async function getAuthorizationToken() {
 }
 
 const NOW_PLAYING_ENDPOINT = `/me/player/currently-playing`;
-async function nowPlaying() {
+export async function nowPlaying(): Promise<Partial<SpotifyApi.CurrentlyPlayingResponse>> {
   const Authorization = await getAuthorizationToken();
   const response = await fetch(`${BASE_URL}${NOW_PLAYING_ENDPOINT}`, {
     headers: {
@@ -85,5 +87,26 @@ async function nowPlaying() {
   } else if (status === 200) {
     const data = await response.json();
     return data;
+  }
+}
+
+const TOP_TRACKS_ENDPOINT = `/me/top/tracks`;
+export async function topTrack({ index, timeRange = 'short_term' }: { index: number, timeRange?: 'long_term'|'medium_term'|'short_term' }): Promise<SpotifyApi.TrackObjectFull> {
+  const Authorization = await getAuthorizationToken();
+  const params = new URLSearchParams();
+  params.set('limit', '1');
+  params.set('offset', `${index}`);
+  params.set('time_range', `${timeRange}`);
+  const response = await fetch(`${BASE_URL}${TOP_TRACKS_ENDPOINT}?${params}`, {
+    headers: {
+      Authorization
+    },
+  });
+  const { status } = response;
+  if (status === 204) {
+    return null;
+  } else if (status === 200) {
+    const data = await response.json() as SpotifyApi.UsersTopTracksResponse;
+    return data.items[0];
   }
 }
