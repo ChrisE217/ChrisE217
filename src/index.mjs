@@ -4,13 +4,12 @@ import Spotify from './spotify.mjs';
 
 const readme = `\
 ### Hi there 👋
-
 ---
-
 ${YearTracker}
----
 
+---
 ${Spotify}
+
 ---
 ${Views}
 `
