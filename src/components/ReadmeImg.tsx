@@ -31,6 +31,17 @@ const ReadmeImg = ({ width, height, children }) => {
                   color: inherit !important;
                 }
               }
+
+              @media (prefers-color-scheme: dark_dimmed) {
+                :root {
+                  color: rgb(199, 209, 221);
+                  background: rgb(35, 39, 45);
+                }
+
+                p {
+                  color: inherit !important;
+                }
+              }
             `}</style>
           {children}
         </div>
