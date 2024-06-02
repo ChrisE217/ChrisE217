@@ -1,7 +1,7 @@
-### Hi there 👋
+# Hi there 👋
 
-⏳ Year progress [ ████████████▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁ ] 41.98 %
-
+⏳ Year progress [ ████████████▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁ ] 41.99 %
+---
 
 <a href="https://readme-spotify-nine.vercel.app/spotify?open">
     <img src="https://readme-spotify-nine.vercel.app/spotify" width="540" height="64">
