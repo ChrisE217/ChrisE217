@@ -83,12 +83,14 @@ const writeTokenToEnvFile = (refreshToken) => {
       }
     );
   } else {
-    fs.writeFile("./.env", `\nSPOTIFY_REFRESH_TOKEN=${refreshToken}`, function (
-      err
-    ) {
-      if (err) throw err;
-      console.log("Refresh Token added to .env file");
-    });
+    fs.writeFile(
+      "./.env",
+      `\nSPOTIFY_REFRESH_TOKEN=${refreshToken}`,
+      function (err) {
+        if (err) throw err;
+        console.log("Refresh Token added to .env file");
+      }
+    );
   }
 };
 

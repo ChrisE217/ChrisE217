@@ -4,7 +4,6 @@
     "version": "1.0.0",
     "description": "Github Profile Readme",
     "main": "index.mjs",
-    "type": "module",
     "dependencies": {
       "faunadb": "^2.14.2",
       "isomorphic-unfetch": "^3.1.0",
