@@ -3,7 +3,7 @@ import Views from './views.mjs';
 import Spotify from './spotify.mjs';
 
 const readme = `\
-# Hi there 👋
+### Hi there 👋
 
 ${YearTracker}
 ---
