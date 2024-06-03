@@ -1,11 +1,11 @@
 ### Hi there 👋
 ---
-⏳ Year progress [ ████████████▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁ ] 42.15 %
+⏳ Year progress [ ████████████▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁ ] 42.21 %
 
 ---
 
-<a href="https://readme-spotify-nine.vercel.app/spotify?open">
-    <img src="https://readme-spotify-nine.vercel.app/spotify" width="540" height="64">
+<a href="https://dev.chrisewart.com/spotify?open">
+    <img src="https://dev.chrisewart.com/spotify" width="540" height="64">
 </a> 
 
 
