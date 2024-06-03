@@ -1,5 +1,5 @@
 export default `
-<a href="https://readme-spotify-nine.vercel.app/spotify?open">
-    <img src="https://readme-spotify-nine.vercel.app/spotify" width="540" height="64">
+<a href="https://dev.chrisewart.com/spotify?open">
+    <img src="https://dev.chrisewart.com/spotify" width="540" height="64">
 </a> 
 `;
